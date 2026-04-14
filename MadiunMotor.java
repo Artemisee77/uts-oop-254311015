@@ -19,13 +19,15 @@ public class MadiunMotor extends LayananTransportasi {
         
         // Logika validasi pembayaran
         if (this.saldoUser >= totalTarif) {
+            double saldoAwal = this.saldoUser;
             this.saldoUser -= totalTarif; // Kurangi saldo
             System.out.println("Nama Driver : " + this.namaDriver);
             System.out.println("Jarak       : " + this.jarak + " km");
+            System.out.println("Saldo Awal   : Rp " + saldoAwal);
             System.out.println("Total Bayar : Rp " + totalTarif);
             System.out.println("Sisa Saldo  : Rp " + this.saldoUser);
         } else {
-            System.out.println("Gagal: Saldo tidak mencukupi untuk perjalanan ini!");
+            System.out.println("Gagal: Saldo tidak mencukupi untuk perjalanan ini! saldo anda hanya : " + this.saldoUser + " membutuhkan: " + totalTarif);
         }
     }
 }
